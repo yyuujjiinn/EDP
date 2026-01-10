@@ -1,21 +1,24 @@
 package IT206_Assignment_No1.part3;
 
+import java.lang.reflect.Constructor;
+
+// Inherits from Shape, implements Drawable interface
 public class Rectangle extends Shape implements Drawable{
    
     private double width;
     private double length;
 
+    // Constructor to set dimensions
     public Rectangle(double length, double width) {
 
         this.length=length;
         this.width=width;
-        //TODO Auto-generated constructor stub
     }
 
     
     @Override
     public double calculateArea() {
-      return length*width;
+      return length*width;// Calculate area (l * w)
     }
 
     @Override
@@ -28,7 +31,8 @@ public class Rectangle extends Shape implements Drawable{
                       "|                          |\n" + //
                       "+--------------------------+");
     }
-    public void displayDetails() {//add this to display details
+    //Display Method
+    public void displayDetails() {
         displayShapeType();
         System.out.println("Length: " + length);
         System.out.println("Width: " + width);

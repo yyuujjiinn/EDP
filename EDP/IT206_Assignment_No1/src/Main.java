@@ -14,7 +14,9 @@ public class Main{
         ArrayList<Circle> circles = new ArrayList<>();
         ArrayList<Rectangle> rectangles = new ArrayList<>();
 
-        while (true) {//flow
+        //flow
+        while (true) {
+
             //Main menu option prompting
             System.out.println("\n=== MAIN MENU ===");
             System.out.println("[1] Book Menu");
@@ -61,7 +63,7 @@ public class Main{
                                     float discount = in.nextFloat();
                                     in.nextLine();
 
-                                    Book b;//creating objects and defining whether ebbok or normal book
+                                    Book b;//creating objects and defining whether ebook or normal book
                                     if (type.equals("1")) {
                                         b = new Book(title, author, price);
                                     } else {
