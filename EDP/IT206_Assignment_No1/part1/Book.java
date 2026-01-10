@@ -6,6 +6,8 @@ public class Book {
     protected String title;
     protected String author;
 
+    
+
     //Application of Encapsulation
     private float price;
     private float originalPrice;//Variable to hold the Original Price
@@ -22,11 +24,7 @@ public class Book {
     public void setTitle(String title) { this.title = title; }
     public void setAuthor(String author) { this.author = author; }
     public void setPrice(float price){
-        if (price > 0){
         this.price=price;
-    }else{
-        System.out.println("Price must be greater than 0");
-    }
     }
 
     //Getters
@@ -43,7 +41,7 @@ public class Book {
         System.out.println("Book Title : " + getTitle());
         System.out.println("Book Author : " + getAuthor());
         System.out.println("Original Boook Price: " + originalPrice);//Original Price Display
-        System.out.println("Book price : " + getPrice());//Discounted Price
+        System.out.println("Discounted Book price : " + getPrice());//Discounted Price
     }
 
     //Final Price Calculation
@@ -52,5 +50,4 @@ public class Book {
         price -= discountAmount;
         return discountAmount;
     }
-
 }

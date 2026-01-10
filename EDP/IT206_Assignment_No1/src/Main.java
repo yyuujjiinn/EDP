@@ -56,8 +56,15 @@ public class Main{
                                     System.out.print("Author: ");
                                     String author = in.nextLine();
 
-                                    System.out.print("Price: ");
-                                    float price = in.nextFloat();
+                                        float price;
+    do {
+        System.out.print("Price: ");
+        price = in.nextFloat();
+        
+        if (price < 0) {
+            System.out.println("Invalid input! Price cannot be negative. Try again.");
+        }
+    } while (price < 0); // Keep asking as long as price is negative
 
                                     System.out.print("Discount (%): ");
                                     float discount = in.nextFloat();
