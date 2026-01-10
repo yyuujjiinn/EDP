@@ -65,17 +65,17 @@ public class Main {
                                     } while (price < 0);
 
                                    float discount;
-do {
-    System.out.print("Discount (%): ");
-    discount = in.nextFloat();
-    
-    // Check if it's too high OR too low
-    if (discount < 1 || discount > 100) {
-        System.out.println("Invalid input! Discount must be between 1 and 100.");
-    }
-} while (discount < 1 || discount > 100);
+                                    do {
+                                    System.out.print("Discount (%): ");
+                                    discount = in.nextFloat();
+                                    
+                                    // Check if it's too high OR too low
+                                    if (discount < 1 || discount > 100) {
+                                        System.out.println("Invalid input! Discount must be between 1 and 100.");
+                                    }
+                                } while (discount < 1 || discount > 100);
 
-in.nextLine(); // Consume newline after valid number
+                                in.nextLine(); // Consume newline after valid number
 
                                     Book b; // creating objects and defining whether ebook or normal book
                                     if (type.equals("1")) {
@@ -169,19 +169,46 @@ in.nextLine(); // Consume newline after valid number
                                     if (type.equals("0")) break;
 
                                     if (type.equals("1")) {
-                                        System.out.print("Radius: ");
-                                        double r = in.nextDouble();
+                                        double r;
+                                        do {
+                                            System.out.print("Radius: ");
+                                            r = in.nextDouble();
+                                            if (r < 0) {
+                                                System.out.println("Invalid input! Radius cannot be negative.");
+                                            }
+                                        } while (r < 0);
+                                        // -----------------------
+
                                         in.nextLine();
                                         circles.add(new Circle(r));
-                                        System.out.println(" Circle added successfully!");
+                                        System.out.println("Circle added successfully!");
+
                                     } else if (type.equals("2")) {
-                                        System.out.print("Length: ");
-                                        double l = in.nextDouble();
-                                        System.out.print("Width: ");
-                                        double w = in.nextDouble();
+                                        // --- Validate Length ---
+                                        double l;
+                                        do {
+                                            System.out.print("Length: ");
+                                            l = in.nextDouble();
+                                            if (l < 0) {
+                                                System.out.println("Invalid input! Length cannot be negative.");
+                                            }
+                                        } while (l < 0);
+                                        // -----------------------
+
+                                        // --- Validate Width ---
+                                        double w;
+                                        do {
+                                            System.out.print("Width: ");
+                                            w = in.nextDouble();
+                                            if (w < 0) {
+                                                System.out.println("Invalid input! Width cannot be negative.");
+                                            }
+                                        } while (w < 0);
+                                        // ----------------------
+
                                         in.nextLine();
                                         rectangles.add(new Rectangle(l, w));
-                                        System.out.println(" Rectangle added successfully!");
+                                        System.out.println("Rectangle added successfully!");
                                     }
 
                                     // After add options
