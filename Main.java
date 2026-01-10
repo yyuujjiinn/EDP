@@ -177,14 +177,11 @@ public class Main {
                                                 System.out.println("Invalid input! Radius cannot be negative.");
                                             }
                                         } while (r < 0);
-                                        // -----------------------
-
                                         in.nextLine();
                                         circles.add(new Circle(r));
                                         System.out.println("Circle added successfully!");
 
                                     } else if (type.equals("2")) {
-                                        // --- Validate Length ---
                                         double l;
                                         do {
                                             System.out.print("Length: ");
@@ -193,9 +190,6 @@ public class Main {
                                                 System.out.println("Invalid input! Length cannot be negative.");
                                             }
                                         } while (l < 0);
-                                        // -----------------------
-
-                                        // --- Validate Width ---
                                         double w;
                                         do {
                                             System.out.print("Width: ");
@@ -204,8 +198,6 @@ public class Main {
                                                 System.out.println("Invalid input! Width cannot be negative.");
                                             }
                                         } while (w < 0);
-                                        // ----------------------
-
                                         in.nextLine();
                                         rectangles.add(new Rectangle(l, w));
                                         System.out.println("Rectangle added successfully!");
