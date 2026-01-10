@@ -64,16 +64,33 @@ public class Main {
                                         }
                                     } while (price < 0);
 
-                                    System.out.print("Discount (%): ");
-                                    float discount = in.nextFloat();
-                                    in.nextLine(); // Consume newline
+                                   float discount;
+do {
+    System.out.print("Discount (%): ");
+    discount = in.nextFloat();
+    
+    // Check if it's too high OR too low
+    if (discount < 1 || discount > 100) {
+        System.out.println("Invalid input! Discount must be between 1 and 100.");
+    }
+} while (discount < 1 || discount > 100);
+
+in.nextLine(); // Consume newline after valid number
 
                                     Book b; // creating objects and defining whether ebook or normal book
                                     if (type.equals("1")) {
                                         b = new Book(title, author, price);
-                                    } else {
-                                        System.out.print("File Size (MB): ");
-                                        int size = in.nextInt();
+                                    }  else {
+                                        double size;
+                                        do {
+                                            System.out.print("File Size (MB): ");
+                                            size = in.nextDouble();
+                                            
+                                            if (size < 0) {
+                                                System.out.println("Invalid input! File size cannot be negative. Try again.");
+                                            }
+                                        } while (size < 0);
+
                                         in.nextLine(); // Consume newline
                                         b = new Ebook(title, author, price, size);
                                     }
