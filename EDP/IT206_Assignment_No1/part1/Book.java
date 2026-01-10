@@ -21,7 +21,13 @@ public class Book {
     //Setters
     public void setTitle(String title) { this.title = title; }
     public void setAuthor(String author) { this.author = author; }
-    public void setPrice(float price) { this.price = price; }
+    public void setPrice(float price){
+        if (price > 0){
+        this.price=price;
+    }else{
+        System.out.println("Price must be greater than 0");
+    }
+    }
 
     //Getters
     public String getTitle() { return this.title; }
@@ -46,4 +52,5 @@ public class Book {
         price -= discountAmount;
         return discountAmount;
     }
+
 }
